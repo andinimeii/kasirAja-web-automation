@@ -4,6 +4,11 @@ const staticText = require('../static_texts/static-texts')
 
 class salesPage {
 
+    // VISIT PENJUALAN URL
+    async goPenjualanPage() {
+        cy.visit('/sales')
+    }
+
     async clickSalesMenu() {
         cy.xpath(locator.datatestid.sales_menu).click()
     }
@@ -29,12 +34,31 @@ class salesPage {
             .should('have.value', staticText.penjualanPage.total, timeout.e2e)
     }
 
+    async fillSalesTotalNone() {
+        cy.xpath(locator.datatestid.total).click()
+        .clear()
+        .type(staticText.penjualanPage.totalNone, {force: true})
+            .should('have.value', staticText.penjualanPage.totalNone, timeout.e2e)
+    }
+
+    async fillSalesCustomerNone() {
+        cy.xpath(locator.datatestid.removeCustomer).click()
+    }
+
+    async verifySalesCustomerNone() {
+        cy.xpath(locator.datatestid.removeCustomer).click()
+        cy.xpath('//[text()="pelanggan kosong"]').should('be.visible');
+    }
+
     async clickPayBtn() {
         cy.xpath(locator.datatestid.pay_button).click()
         cy.wait(2000)
+    }
+
+    async confirmPayBtn() {
         cy.xpath(locator.datatestid.confirm_button).click()
         cy.xpath(locator.datatestid.close_button).click()
-        cy.visit('https://kasiraja.ajikamaludin.id/sales')
+        cy.visit('/sales')
     }
 
     // DETAIL
