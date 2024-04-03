@@ -1,12 +1,16 @@
 module.exports = {
     loginPage: {
-        email: 'hartakarun12@gmail.com',
-        password: 'hartakarun12'
+        email: 'hartakarun10@gmail.com',
+        invalidEmail: 'hartakarun@gmail.com',
+        invalidEmailFormat: 'hartakarun@',
+        password: 'hartakarun10',
+        invalidPass: 'hartakarun'
     },
     signupPage: {
-        namaToko: 'hartakarun12',
-        email: 'hartakarun12@gmail.com',
-        password: 'hartakarun12'
+        namaToko: 'hartakarun10',
+        email: 'hartakarun10@gmail.com',
+        invalidEmailType: 'hartakarun12@',
+        password: 'hartakarun10',
     },
     kategoriPage: {
         namaKategori: 'Snack',
@@ -26,7 +30,8 @@ module.exports = {
         kategori: 'Snack'
     },
     penjualanPage: {
-        total: '1'
+        total: '1',
+        totalNone: '0'
     },
     penggunaPage: {
         nama: 'Haruto',
