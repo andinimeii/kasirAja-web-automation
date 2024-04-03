@@ -21,6 +21,24 @@ describe('User should be able to manage categories', () => {
         KategoriPage.clickKategoriBtn()
 
     })
+
+    it('Add categories - Invalid: Category name is empty', () => {
+
+        // 1. Visit Url
+        HomePage.goHomepage()
+
+        // 2. Login
+        LoginPage.fillEmail()
+        LoginPage.fillPassword()
+        LoginPage.clickLoginButton()
+
+        // 3. Add Categories
+        KategoriPage.clickKategoriMenu()
+        KategoriPage.clickKategoriAdd()
+        KategoriPage.fillKategoriDesc()
+        KategoriPage.clickKategoriBtn()
+
+    })
     
     it('Edit categories - Valid', () => {
         // 1. Visit Url
