@@ -4,7 +4,9 @@ class homePage {
 
     // HOME
     async goHomepage() {
-        cy.visit('https://kasiraja.ajikamaludin.id/')
+        // cy.visit('https://kasiraja.ajikamaludin.id/')
+        // dari base url
+        cy.visit('/') 
     }
 
     // SIGN UP

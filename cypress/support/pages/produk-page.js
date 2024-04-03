@@ -5,6 +5,12 @@ const timeout = require('../../config')
 
 class produkPage {
 
+    // VISIT PRODUK URL
+    async goProdukPage() {
+        cy.visit('/products')
+    }
+
+    // SIDEBAR MENU PRODUK
     async clickProdukMenu() {
         cy.xpath(locator.datatestid.produk_menu, { timeout: 5000 }).contains('produk').click(), timeout.e2e
     }
@@ -12,6 +18,11 @@ class produkPage {
     // ADD
     async clickProdukAdd() {
         cy.xpath(locator.datatestid.produk_add, { timeout: 5000 }).contains('tambah').click()
+    }
+
+    async clearProdukKode() {
+        cy.xpath(locator.datatestid.kodeProduk_input)
+            .clear()
     }
 
     async fillProdukKode() {
@@ -52,6 +63,11 @@ class produkPage {
             .should('have.value', staticText.produkPage.stok, timeout.e2e)
     }
 
+    async clearProdukStock() {
+        cy.xpath(locator.datatestid.stok_input)
+            .clear()
+    }
+
     async clickKategoriProduk() {
         cy.xpath(locator.datatestid.kategoriProduk_btn)
             .click(), timeout.e2e
@@ -87,9 +103,24 @@ class produkPage {
     }
 
     //DELETE
+    // async clickProdukDelete() {
+    //     cy.xpath(locator.datatestid.delete_button).contains('hapus').click(), { timeout: 5000 }
+    //     cy.xpath(locator.datatestid.confirm_button).click()
+    // }
+
     async clickProdukDelete() {
-        cy.xpath(locator.datatestid.delete_button).contains('hapus').click(), { timeout: 5000 }
-        cy.xpath(locator.datatestid.confirm_button).click()
+        cy.wait(2000)
+        cy.xpath(locator.datatestid.delete_button, {force: true})
+        .should('be.visible')
+        .contains('hapus').click(), { timeout: 5000 }
+        
+    }
+
+    async clickConfirmProdukDelete() {
+        cy.wait(2000)
+        cy.xpath(locator.datatestid.confirm_button, {force: true}).contains('Delete').click(), { timeout: 5000 }
+        cy.wait(1000)
+        
     }
 
 }

@@ -3,7 +3,13 @@ const staticText = require('../static_texts/static-texts')
 const timeout = require('../../config')
 
 class kategoriPage {
+
+    // VISIT KATEGORI URL
+    async goKategoriPage() {
+        cy.visit('/categories')
+    }
     
+    // SIDEBAR MENU KATEGORI
     async clickKategoriMenu() {
         cy.xpath(locator.datatestid.kategori_menu, { timeout: 5000 }).contains('kategori').click()
     }
@@ -48,8 +54,19 @@ class kategoriPage {
 
     // DELETE KATEGORI
     async clickKategoriDelete() {
-        cy.xpath(locator.datatestid.delete_button).contains('hapus').click(), { timeout: 5000 }
-        cy.xpath(locator.datatestid.confirm_button).click()
+        cy.wait(2000)
+        // cy.xpath(locator.datatestid.deleteParent_button, {force: true}).should('be.visible')
+        cy.xpath(locator.datatestid.delete_button, {force: true})
+        .should('be.visible')
+        .contains('hapus').click(), { timeout: 5000 }
+        
+    }
+
+    async clickConfirmKategoriDelete() {
+        cy.wait(2000)
+        cy.xpath(locator.datatestid.confirm_button, {force: true}).contains('Delete').click(), { timeout: 5000 }
+        cy.reload()
+        
     }
 
 }

@@ -4,6 +4,11 @@ const staticText = require('../static_texts/static-texts')
 
 class purchasePage {
 
+    // VISIT PEMBELIAN URL
+    async goPembelianPage() {
+        cy.visit('/purchases')
+    }
+
     async clickPembelianMenu() {
         cy.xpath(locator.datatestid.purchase_menu).click()
     }
@@ -30,9 +35,10 @@ class purchasePage {
     }
 
     async clickBuyBtn() {
+        cy.wait(2000)
         cy.xpath(locator.datatestid.buy_button).click()
         cy.wait(2000)
-        cy.visit('https://kasiraja.ajikamaludin.id/purchases')
+        cy.visit('/purchases')
     }
 
     // DETAIL

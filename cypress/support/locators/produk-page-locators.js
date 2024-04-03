@@ -10,13 +10,15 @@ module.exports = {
         hargaJual_input: '//*[@id="harga jual"]',
         stok_input: '//*[@id="stok"]',
         kategoriProduk_btn: '//*[@id="kategori"]',
-        kategori_input: '//*[@id="chakra-modal--body-25"]/table/tbody/tr[1]/td',
+        // kategori_input: '//*[@id="chakra-modal--body-25"]/table/tbody/tr[1]/td',
+        kategori_input: '//*/table/tbody/tr[1]/td',
         // kategori_input: '//*[@id="kategori" and @value = "Snack"]',
         add_button: '//button[contains(text(), "simpan")]',
         // verify_kategori: '//*[contains(text(), "Snack")]'
         list_button: '//*[@id="menu-button-19"]',
         edit_button: '//*[@id="menu-list-19-menuitem-20"]',
-        delete_button: '//*[@id="menu-list-19-menuitem-21"]',
+        // delete_button: '//*[@id="menu-list-19-menuitem-21"]',
+        delete_button: '//button[@id="menu-list-19-menuitem-21"]',
         confirm_button: '//button[contains(text(), "Delete")]'
     }
 }

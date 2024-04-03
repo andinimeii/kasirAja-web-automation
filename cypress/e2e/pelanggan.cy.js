@@ -24,6 +24,26 @@ describe('User should be able to manage customers', () => {
 
     })
 
+    it('Add customers - Invalid: Name is empty', () => {
+
+        // 1. Visit Url
+        HomePage.goHomepage()
+
+        // 2. Login
+        LoginPage.fillEmail()
+        LoginPage.fillPassword()
+        LoginPage.clickLoginButton()
+
+        // 3. Add Customers
+        PelangganPage.clickPelangganMenu()
+        PelangganPage.clickPelangganAdd()
+        PelangganPage.fillPelangganPhone()
+        PelangganPage.fillPelangganAddress()
+        PelangganPage.fillPelangganKet()
+        PelangganPage.clickPelangganBtn()
+
+    })
+
     it('Edit customers - Valid', () => {
         // 1. Visit Url
         HomePage.goHomepage()

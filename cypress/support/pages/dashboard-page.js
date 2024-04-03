@@ -4,10 +4,7 @@ const locator = require('../locators/dashboard-page-locators')
 class dashboardPage {
 
     async goDashboard() {
-        cy.visit('https://kasiraja.ajikamaludin.id/dashboard')
-    }
-
-    async goDashboard() {
+        cy.visit('/dashboard')
         cy.xpath('//h3[text()="kasirAja"]').should('be.visible');
     }
 }
