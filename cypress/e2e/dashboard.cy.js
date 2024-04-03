@@ -1,8 +1,8 @@
 const HomePage = require('../support/pages/home-page')
-const LoginPage = require('../support/pages/login-page') 
-const SalesPage = require('../support/pages/penjualan-page')  
+const LoginPage = require('../support/pages/login-page')  
+const DashboardPage = require('../support/pages/dashboard-page')  
 
-describe('User should be able to see detail sales', () => {
+describe('User should be able to see dashboard', () => { 
     it('with valid data', () => {
 
         // 1. Visit Url
@@ -13,9 +13,8 @@ describe('User should be able to see detail sales', () => {
         LoginPage.fillPassword()
         LoginPage.clickLoginButton()
 
-        // 3. Detail Sales
-        SalesPage.clickSalesMenu()
-        SalesPage.clickSalesDetail()
+        // 3. Dashboard Page
+        DashboardPage.goDashboard()
       
     })
 

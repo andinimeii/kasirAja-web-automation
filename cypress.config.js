@@ -8,7 +8,7 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);
     },
     
-    // baseUrl: 'https://www.kasirdemo.belajarqa.com',
+    baseUrl: 'https://kasiraja.ajikamaludin.id/',
     // supportFile: false,
     chromeWebSecurity: false
   }
