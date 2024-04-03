@@ -4,6 +4,12 @@ const timeout = require('../../config')
 
 class penggunaPage {
 
+    // VISIT PENGGUNA URL
+    async goPenggunaPage() {
+        cy.visit('/users')
+    }
+
+    // SIDEBAR MENU PENGGUNA
     async clickPenggunaMenu() {
         cy.xpath(locator.datatestid.pengguna_menu, { timeout: 5000 }).contains('pengguna').click()
     }
@@ -57,6 +63,7 @@ class penggunaPage {
     async clickPenggunaDelete() {
         cy.xpath(locator.datatestid.delete_button).contains('hapus').click(), { timeout: 5000 }
         cy.xpath(locator.datatestid.confirm_button).click()
+        cy.wait(2000)
     }
 
 }
